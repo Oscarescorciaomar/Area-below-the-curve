@@ -4,22 +4,39 @@ import numpy as np
 
 # Autor: Oscar M. Escorcia Omar
 
+import matplotlib.pyplot as plt
+import sympy as sp
+import numpy as np
+
+# Autor: Oscar M. Escorcia Omar
+
 y = []
+y1 =[]
+
 for x in range(-10,11):
     y.append(2*x**2+1)
     x = np.arange(-10,11)
+
+for X1 in range(0,11):
+    y1.append(2*X1**2+1)
+    X1 = np.arange(0,11)
+
 #print(y)
 #print(xx)
 
 plt.figure(figsize = (3,3))
 plt.plot(x,y, '--')
+plt.plot(X1,y1,'--')
 plt.grid()
 plt.xlabel('Independent Variable')
 plt.ylabel('Dependent Variable')
+plt.fill_between(X1,y1, color = 'Red')
 plt.show()
 
 x = sp.Symbol('x')
 y1 = 2*x**2+1
 print('The Area below curve is:',y1.integrate((x,0,10)))
+
+
 
 
